@@ -1,0 +1,17 @@
+Source: aiohttp-sse
+Section: unknown
+Priority: optional
+Maintainer: David Lechner <david@ablerobots.com>
+Build-Depends: debhelper-compat (= 12), dh-python, python3-all,
+    python3-setuptools, python3-pytest, python3-pytest-asyncio
+Standards-Version: 4.5.0
+Homepage: https://github.com/aio-libs/aiohttp-sse
+
+Package: python3-aiohttp-sse
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Server-sent events support for aiohttp
+ The EventSource interface is used to receive server-sent events. It connects
+ to a server over HTTP and receives events in text/event-stream format without
+ closing the connection. aiohttp-sse provides support for server-sent events
+ for aiohttp.

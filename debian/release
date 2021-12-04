@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Maintainer script for publishing releases.
+
+set -e
+
+py_version=$(python3 setup.py --version)
+deb_version=$(dpkg-parsechangelog -S Version)
+
+gbp buildpackage --git-tag-only
+debuild
+debrelease
+git push --tags
